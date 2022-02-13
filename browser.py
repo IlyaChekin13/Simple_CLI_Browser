@@ -32,13 +32,10 @@ class Browser:
         for descendant in soup:
             if descendant.name in tags:
                 if descendant.name == 'a':
-                    page += Fore.BLUE + descendant.get_text().strip()
+                    page += Fore.BLUE + descendant.get_text().strip() + "\n"
                 else:
-                    page += Style.RESET_ALL + descendant.get_text().strip()
+                    page += Style.RESET_ALL + descendant.get_text().strip() + "\n"
         return page
-
-
-
 
     def create_dir(self):
         """Create the directory with saved pages"""
